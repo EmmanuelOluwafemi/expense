@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <header class="header">
+            <div class="header__search"></div>
+            <div class="heading__avatar" id="avatar">
+                <div class="avatar"></div>
+                <i class="fas fa-sort-down"></i>
+                <ul class="dropdown">
+                    <li>Profile <i class="far fa-user-circle"></i></li>
+                    <li>Settings <i class="fas fa-cog"></i></li>
+                    <li>Logout <i class="fas fa-sign-out-alt"></i></li>
+                </ul>
+            </div>
+        </header>
+        <aside class="sidenav">
+            <div class="sidenav__close-icon">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="logo text-upper"><span>Ex</span>pento</div>
+            <ul class="sidenav__list">
+                <li class="sidenav__list-item active"><a href="index.html"><i class="fas fa-columns"></i> Dashboard</a></li>
+                <li class="sidenav__list-item"><a href="add_income.html"><i class="fas fa-university"></i> Add Income</a></li>
+                <li class="sidenav__list-item"><a href="add_expense.html"><i class="fas fa-wallet"></i> Add Expenses</a></li>
+                <li class="sidenav__list-item"><a href="#"><i class="fas fa-window-restore"></i> Add Budget</a></li>
+                <li class="sidenav__list-item"><a href="view_income.html"><i class="fas fa-store"></i> View Incomes</a></li>
+                <li class="sidenav__list-item"><a href="view_expenses.html"><i class="far fa-money-bill-alt"></i> View Expenses</a></li>
+            </ul>
+            <div class="profile">
+                <div class="avatar"></div>
+                <div class="info">
+                    <div class="name">Emmanuel Yusuf</div>
+                    <div class="track">Frontend Developer</div>
+                </div>
+            </div> 
+        </aside>
+        <main class="main">
+            <div class="main__header">
+                Dashboard
+            </div>
+            <div class="main-overview">
+                <div class="overviewcard bg-red">
+                  <div class="overviewcard__icon">
+                      <img src="./assets/icon/pay (1) 1.svg" alt="background image">
+                  </div>
+                  <div class="overviewcard__content">
+                      <h3 class="text-upper">Total income</h3>
+                      <p>The amount of income recieved since my first day with expento.</p>
+                  </div>
+                  <div class="overviewcard__info">$70000</div>
+                </div>
+                <div class="overviewcard bg-blue">
+                  <div class="overviewcard__icon">
+                      <img src="./assets/icon/pay (2).svg" alt="background image">
+                  </div>
+                  <div class="overviewcard__content">
+                      <h3 class="text-upper">Total Expense</h3>
+                      <p>The amount of My Expenses since my first day with expento.</p>
+                  </div>
+                  <div class="overviewcard__info">$65000</div>
+                </div>
+                <div class="overviewcard bg-purple">
+                  <div class="overviewcard__icon">
+                      <img src="./assets/icon/cost 1.svg" alt="background image">
+                  </div>
+                  <div class="overviewcard__content">
+                      <h3 class="text-upper">Budget</h3>
+                      <p>my Average budget for a month.</p>
+                  </div>
+                  <div class="overviewcard__info">$64000</div>
+                </div>
+            </div>
+            <div class="main-cards">
+                <div class="chart-container">
+                    <h3>Income - Expense Chart</h3>
+                    <div class="chart-group">
+                        <div class="chart-title">Today Income - Expense</div>
+                        <div class="chart">
+                            <canvas id="todayChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-group">
+                        <div class="chart-title">Month Income - Expense</div>
+                        <div class="chart">
+                            <canvas id="monthChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="recent-activities">
+                    <h3>Recent Activities</h3>
+                    <div class="activities">
+                        <div class="activities--icon bg-red"><i class="far fa-money-bill-alt"></i></div>
+                        <div class="activities--content">
+                            <div class="activities--title">An amount of <span class="text-red">$200</span> is added to 
+                                income.</div>
+                            <div class="activities--time">2 mins ago.</div>
+                        </div>
+                    </div>
+                    <div class="activities">
+                        <div class="activities--icon bg-blue"><i class="fas fa-money-check"></i></div>
+                        <div class="activities--content">
+                            <div class="activities--title">An amount of <span class="text-blue">$400</span> is added to 
+                                Expense.</div>
+                            <div class="activities--time">3 mins ago.</div>
+                        </div>
+                    </div>
+                    <div class="activities">
+                        <div class="activities--icon bg-purple"><i class="fas fa-money-check"></i></div>
+                        <div class="activities--content">
+                            <div class="activities--title">An amount of <span class="text-purple">$200</span> is added to 
+                                Budget.</div>
+                            <div class="activities--time">3 mins ago.</div>
+                        </div>
+                    </div>
+                    <div class="activities">
+                        <div class="activities--icon bg-blue"><i class="fas fa-money-check"></i></div>
+                        <div class="activities--content">
+                            <div class="activities--title">An amount of <span class="text-blue">$400</span> is added to 
+                                Expense.</div>
+                            <div class="activities--time">3 mins ago.</div>
+                        </div>
+                    </div>
+                    <div class="activities">
+                        <div class="activities--icon bg-red"><i class="far fa-money-bill-alt"></i></div>
+                        <div class="activities--content">
+                            <div class="activities--title">An amount of <span class="text-red">$200</span> is added to 
+                                income.</div>
+                            <div class="activities--time">2 mins ago.</div>
+                        </div>
+                    </div>
+                    <div class="activities">
+                        <div class="activities--icon bg-blue"><i class="fas fa-money-check"></i></div>
+                        <div class="activities--content">
+                            <div class="activities--title">An amount of <span class="text-blue">$400</span> is added to 
+                                Expense.</div>
+                            <div class="activities--time">3 mins ago.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+    <script src="./assets/js/chart.js"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>

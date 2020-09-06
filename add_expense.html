@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <div class="grid-container">
+        <div class="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <header class="header">
+            <div class="header__search"></div>
+            <div class="heading__avatar">
+                <div class="avatar"></div>
+                <i class="fas fa-sort-down"></i>
+                <ul class="dropdown">
+                    <li>Profile <i class="far fa-user-circle"></i></li>
+                    <li>Settings <i class="fas fa-cog"></i></li>
+                    <li>Logout <i class="fas fa-sign-out-alt"></i></li>
+                </ul>
+            </div>
+        </header>
+        <aside class="sidenav">
+            <div class="sidenav__close-icon">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="logo text-upper"><span>Ex</span>pento</div>
+            <ul class="sidenav__list">
+                <li class="sidenav__list-item"><a href="index.html"><i class="fas fa-columns"></i> Dashboard</a></li>
+                <li class="sidenav__list-item"><a href="add_income.html"><i class="fas fa-university"></i> Add Income</a></li>
+                <li class="sidenav__list-item active"><a href="add_expense.html"><i class="fas fa-wallet"></i> Add Expenses</a></li>
+                <li class="sidenav__list-item"><a href="#"><i class="fas fa-window-restore"></i> Add Budget</a></li>
+                <li class="sidenav__list-item"><a href="view_income.html"><i class="fas fa-store"></i> View Incomes</a></li>
+                <li class="sidenav__list-item"><a href="view_expenses.html"><i class="far fa-money-bill-alt"></i> View Expenses</a></li>
+            </ul>
+            <div class="profile">
+                <div class="avatar"></div>
+                <div class="info">
+                    <div class="name">Emmanuel Yusuf</div>
+                    <div class="track">Frontend Developer</div>
+                </div>
+            </div> 
+        </aside>
+        <main class="main">
+            <div class="main__header">
+                Add Expense
+            </div>
+            <div class="main-content">
+                <div class="form-group">
+                    <label for="amount">Source</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Description</label>
+                    <textarea></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Add Expense">
+                </div>
+                
+            </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        const menuIconEl = $('.menu-icon');
+        const sidenavEl = $('.sidenav');
+        const sidenavCloseEl = $('.sidenav__close-icon');
+
+        // Add and remove provided class names
+        function toggleClassName(el, className) {
+        if (el.hasClass(className)) {
+            el.removeClass(className);
+        } else {
+            el.addClass(className);
+        }
+        }
+        // Open the side nav on click
+        menuIconEl.on('click', function() {
+        toggleClassName(sidenavEl, 'active');
+        });
+
+        // Close the side nav on click
+        sidenavCloseEl.on('click', function() {
+        toggleClassName(sidenavEl, 'active');
+        });
+    </script>
+</body>
+</html>

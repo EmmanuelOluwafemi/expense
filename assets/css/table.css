@@ -1,0 +1,215 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.25;
+  }
+  
+  table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+  
+  table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+  }
+
+  thead{
+    background: #F4F2FF;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #6E6893;
+  }
+
+  tbody{
+    background: #fff;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #25213B;
+  }
+
+  tbody a, i{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #6E6893;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  table tr {
+    border: 1px solid #6e689326;
+    padding: .35em;
+  }
+  
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+  }
+
+  table th{
+    height: 45px;
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+
+  .table-head{
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    border: 1px solid #6e689326;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+
+  .filter-section{
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  .filter{
+    height: 40px;
+    width: 88px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #25213B;
+    border: 1px solid #6e689326;
+  }
+
+  .search{
+    position: relative;
+    height: 40px;
+  }
+
+  .search i{
+    position: absolute;
+    top: 50%;
+    left: 27px;
+    transform: translateY(-50%);
+  }
+
+  .filter-section input{
+    height: 40px;
+    margin-left: 20px;
+    border: 1px solid #6e689326;
+    padding-left: 30px;
+  }
+
+  .filter i, .search i{
+    font-size: 20px;
+    padding-right: 10px;
+    color: #6e689380;
+  }
+
+  .table-head .btn{
+    height: 40px;
+    width: 112px;
+    color: #fff;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .tfoot{
+    border: 1px solid #6e689326;
+    background: #F4F2FF;
+    height: 30px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .pagination{
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pagination span{
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+
+    .table-head .btn{
+      width: 80px;
+    }
+  }
